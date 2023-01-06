@@ -1,6 +1,6 @@
 # TorchFuzz
 
-TorchFuzz is an open-source for fuzzing of pytorch models.
+**TorchFuzz** is an open-source for fuzzing of pytorch models.
 
 ## Base code
 
@@ -42,33 +42,19 @@ measure_model.run_fuzzing(trainset, isTrain=True, threshold=0.5, isRandom=0)
 measure_model.run_fuzzing(testset, isTrain=False, threshold=0.5, isRandom=0)
 ```
 
-Wrap model with PytorchModel().  
-use .runfuzzing() to start fuzzing.
+Wrap model with **PytorchModel()**.  
+use **.runfuzzing()** to start fuzzing.
 
-- dataset : instance of torch.utils.data.Dataset  
+- **dataset** : instance of torch.utils.data.Dataset  
     Dataset from which to load the data.  
-- isTrain: boolean  
+- **isTrain**: boolean  
     Check wheter dataset is train data or test data  
-- isRandom: interger  
+- **isRandom**: interger  
     0 when want to check all parameters else positive integer  
-- threshold: float  
+- **threshold**: float  
     Neuron coverage activate threshold  
-- params_list: two-dimensional list or empty  
+- **params_list**: two-dimensional list or empty  
     Empty if want to use base parameters else two-dimensional list of parameters
-
-#### Output
-All datas are stored in ./cache folder.
-
-- nc_arr.npy: Coverage of train data  
-- corpus.pickle: Mutationed data that are classified well  
-- crash_increase.pickle: Mutationed data that are classified wrong and incrase coverage compared to train data  
-- crash_no_increase.pickle: Mutationed data that are classified wrong and didn't incrase coverage compared to train data
-
-all pickle files structure is as follows.
-```python
-[list of mutation data, list of label, list of original data, list of mutation parameter]
-```
-
 #### Base Parameters list
 ```python
 params_list = [  # 테스트 파라미터
@@ -83,4 +69,16 @@ params_list = [  # 테스트 파라미터
     [1, 3, 5],                      # MedianBlur
     [6, 9]                          # bilateraFilter
     ]
+```
+#### Output
+All datas are stored in **./cache** folder.
+
+- **nc_arr.npy**: Coverage of train data  
+- **corpus.pickle**: Mutationed data that are classified well  
+- **crash_increase.pickle**: Mutationed data that are classified wrong and incrase coverage compared to train data  
+- **crash_no_increase.pickle**: Mutationed data that are classified wrong and didn't incrase coverage compared to train data
+
+all pickle files structure is as follows.
+```python
+[list of mutation data, list of label, list of original data, list of mutation parameter]
 ```
