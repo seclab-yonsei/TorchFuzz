@@ -5,7 +5,21 @@ TorchFuzz is an open-source for fuzzing of pytorch models.
 ## Base code
 
 The code is based on EvalDNN code.  
-You can find original code here: https://github.com/yqtianust/EvalDNN
+You can find original code here: https://github.com/yqtianust/EvalDNN  
+  
+Mutation methods used are as follows. 
+- translation
+- scale
+- shear
+- contrast
+- rotation
+- brightness
+- blur
+- GaussianBlur
+- MedianBlur
+- bilateraFilter
+You can find more information about mutation method in paper as follows.
+https://doi.org/10.1145/3293882.3330579
 
 ## Usage
 
