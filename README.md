@@ -57,7 +57,7 @@ use **.runfuzzing()** to start fuzzing.
     Empty if want to use base parameters else two-dimensional list of parameters
 #### Base Parameters list
 ```python
-params_list = [  # 테스트 파라미터
+params_list = [
     [-20, -10, -5, 5, 10, 20],      # translation
     [5, 7, 12, 13, 15, 17],         # scale
     [-6, -5, -3, 3, 5, 6],          # shear
