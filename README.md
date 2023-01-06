@@ -36,7 +36,7 @@ use .runfuzzing() to start fuzzing.
     Check wheter dataset is train data or test data  
 - isRandom: interger  
     0 when want to check all parameters else positive integer  
-- -threshold: float  
+- threshold: float  
     Neuron coverage activate threshold  
 - params_list: two-dimensional list or empty  
     Empty if want to use base parameters else two-dimensional list of parameters
