@@ -78,7 +78,7 @@ All datas are stored in **./cache** folder.
 - **crash_increase.pickle**: Mutationed data that are classified wrong and incrase coverage compared to train data  
 - **crash_no_increase.pickle**: Mutationed data that are classified wrong and didn't incrase coverage compared to train data
 
-all pickle files structure is as follows.
+All pickle files structure is as follows.
 ```python
 [list of mutation data, list of label, list of original data, list of mutation parameter]
 ```
