@@ -43,6 +43,10 @@ measure_model.run_fuzzing(testset, isTrain=False, threshold=0.5, isRandom=0)
 ```
 
 Wrap model with **PytorchModel()**.  
+- **device** : string  
+    Choose which device to run.  
+    ex. cpu, cuda, cuda:0 
+  
 use **.runfuzzing()** to start fuzzing.
 
 - **dataset** : instance of torch.utils.data.Dataset  

@@ -38,7 +38,7 @@ class PyTorchModel:
 
     """
 
-    def __init__(self, model):
+    def __init__(self, model, device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')):
 
         # GPU 한개만 사용할 경우
         # os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
@@ -47,7 +47,7 @@ class PyTorchModel:
         assert isinstance(model, torch.nn.Module)
         self._model = model
         # self._device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-        self._device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        self._device = device
         self._model.eval()
         self._model.to(self._device)
 
@@ -104,6 +104,21 @@ class PyTorchModel:
 
         params_list = self.get_params_list(params_list=params_list)
 
+        corpus_mut_img_list = list()
+        corpus_label_list = list()
+        corpus_ori_img_list = list()
+        corpus_mut_par_list = list()
+
+        crash_mut_img_increase_list = list()
+        crash_label_increase_list = list()
+        crash_ori_img_increase_list = list()
+        crash_mut_par_increase_list = list()
+
+        crash_mut_img_no_increase_list = list()
+        crash_label_no_increase_list = list()
+        crash_ori_img_no_increase_list = list()
+        crash_mut_par_no_increase_list = list()
+
         with torch.no_grad():
             for data_num, data in enumerate(dataloader):
                 if isinstance(data, list):
@@ -155,20 +170,6 @@ class PyTorchModel:
                             mut_data_list.append(torch.Tensor(np.expand_dims(np_mut_img, axis=0)))
                             mut_param_list.append([i, j])
 
-                    corpus_mut_img_list = list()
-                    corpus_label_list = list()
-                    corpus_ori_img_list = list()
-                    corpus_mut_par_list = list()
-
-                    crash_mut_img_increase_list = list()
-                    crash_label_increase_list = list()
-                    crash_ori_img_increase_list = list()
-                    crash_mut_par_increase_list = list()
-
-                    crash_mut_img_no_increase_list = list()
-                    crash_label_no_increase_list = list()
-                    crash_ori_img_no_increase_list = list()
-                    crash_mut_par_no_increase_list = list()
 
                     # 파라미터 랜덤 선택 리스트
                     if isRandom > 0:
