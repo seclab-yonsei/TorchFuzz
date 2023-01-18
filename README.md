@@ -38,8 +38,8 @@ pip install -r requirements.txt
 from torchfuzz.models.pytorch import PyTorchModel
 
 measure_model = PyTorchModel(net, device='cuda' if torch.cuda.is_available() else 'cpu')
-measure_model.run_fuzzing(trainset, isTrain=True, threshold=0.5, isRandom=0)
-measure_model.run_fuzzing(testset, isTrain=False, threshold=0.5, isRandom=0)
+measure_model.run_fuzzing(trainloader, isTrain=True, threshold=0.5, isRandom=0)
+measure_model.run_fuzzing(testloader, isTrain=False, threshold=0.5, isRandom=0)
 ```
 
 Wrap model with **PytorchModel()**.  
