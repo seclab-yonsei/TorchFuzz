@@ -54,7 +54,7 @@ class PyTorchModel:
         self._neuron_array = np.array([])   # 전체 커버리지 저장
 
 
-    def run_fuzzing(self, dataset, isTrain=True, isRandom=0, threshold=0.5, params_list=0):
+    def run_fuzzing(self, dataloader, isTrain=True, isRandom=0, threshold=0.5, params_list=0):
         """Get the intermediate layer outputs of the model.
 
         The method will use the model to do prediction batch by batch. For
@@ -90,7 +90,7 @@ class PyTorchModel:
         self._neuron_coverage = NeuronCoverage(threshold=0.5)
         callbacks = [self._neuron_coverage.update, self._neuron_coverage.report]
 
-        dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size)
+        # dataloader = torch.utils.data.DataLoader(dataset, batch_size=batch_size)
         y_mini_batch_outputs = []
         hook_handles = []
         intermediate_layers = self._intermediate_layers(self._model)

@@ -49,8 +49,8 @@ Wrap model with **PytorchModel()**.
   
 use **.runfuzzing()** to start fuzzing.
 
-- **dataset** : instance of torch.utils.data.Dataset  
-    Dataset from which to load the data.  
+- **dataloader** : instance of torch.utils.data.dataloader 
+    Dataset loader to load the data.  
 - **isTrain**: boolean  
     Check wheter dataset is train data or test data  
 - **isRandom**: interger  
