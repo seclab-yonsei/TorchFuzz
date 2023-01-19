@@ -49,7 +49,7 @@ Wrap model with **PytorchModel()**.
   
 use **.runfuzzing()** to start fuzzing.
 
-- **dataloader** : instance of torch.utils.data.dataloader  
+- **dataloader** : instance of torch.utils.data.dataloader
     Dataset loader to load the data.  
 - **isTrain**: boolean  
     Check wheter dataset is train data or test data  
@@ -62,17 +62,17 @@ use **.runfuzzing()** to start fuzzing.
 #### Base Parameters list
 ```python
 params_list = [
-    [-20, -10, -5, 5, 10, 20],      # translation
-    [5, 7, 12, 13, 15, 17],         # scale
-    [-6, -5, -3, 3, 5, 6],          # shear
-    [1, 2, 13, 20],                 # contrast
-    [-60, -50, -40, 40, 50, 60],    # rotation
-    [-90, -80, -70, 70, 80, 90],    # brightness
-    [1, 2, 3, 5, 7, 9],             # blur
-    [1, 3, 5, 7, 9, 11],            # GaussianBlur
-    [1, 3, 5],                      # MedianBlur
-    [6, 9]                          # bilateraFilter
-    ]
+[-3, -2, -1, 1, 2, 3],      # translation
+[7, 8, 10, 11, 12,],         # scale
+[-6, -5, -3, 3, 5, 6],          # shear
+[5, 7, 9, 11, 13],                 # contrast
+[-50, -40, -30, 30, 40, 50],    # rotation
+[-20, -10, 10, 20],    # brightness
+[1, 2, 3, 5, 7, 9],             # blur
+[1, 3, 5, 7, 9, 11],            # GaussianBlur
+[1, 3, 5],                      # MedianBlur
+[6, 9]                          # bilateraFilter
+]
 ```
 #### Output
 All datas are stored in **./cache** folder.

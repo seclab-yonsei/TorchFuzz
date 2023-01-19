@@ -293,13 +293,28 @@ class PyTorchModel:
 
     def get_params_list(self, params_list=0):
         if 'list' not in str(type(params_list)):
+            # params_list = [  # 테스트 파라미터
+            #     [-20, -10, -5, 5, 10, 20],  # translation       0
+            #     [5, 7, 12, 13, 15, 17],  # scale             1
+            #     [-6, -5, -3, 3, 5, 6],  # shear             2
+            #     [1, 2, 13, 20],  # contrast                 3
+            #     [-60, -50, -40, 40, 50, 60],  # rotation    4
+            #     [-90, -80, -70, 70, 80, 90],  # brightness  5
+            #     [1, 2, 3, 5, 7, 9],  # blur                 6
+            #     [1, 3, 5, 7, 9, 11],  # GaussianBlur        7
+            #     [1, 3, 5],  # MedianBlur                    8
+            #     [6, 9]  # bilateraFilter                    9
+            #     # [1, 100],       # pixel_change
+            #     # [0, 150],       # noise1
+            #     # [0, 0.05]       # noise2
+            # ]
             params_list = [  # 테스트 파라미터
-                [-20, -10, -5, 5, 10, 20],  # translation       0
-                [5, 7, 12, 13, 15, 17],  # scale             1
+                [-3, -2, -1, 1, 2, 3],  # translation       0
+                [7, 8, 10, 11, 12],  # scale             1
                 [-6, -5, -3, 3, 5, 6],  # shear             2
-                [1, 2, 13, 20],  # contrast                 3
-                [-60, -50, -40, 40, 50, 60],  # rotation    4
-                [-90, -80, -70, 70, 80, 90],  # brightness  5
+                [5, 7, 9, 11, 13],  # contrast                 3
+                [-50, -40, -30, 30, 40, 50],  # rotation    4
+                [-20, -10, 10, 20],  # brightness  5
                 [1, 2, 3, 5, 7, 9],  # blur                 6
                 [1, 3, 5, 7, 9, 11],  # GaussianBlur        7
                 [1, 3, 5],  # MedianBlur                    8
@@ -308,5 +323,4 @@ class PyTorchModel:
                 # [0, 150],       # noise1
                 # [0, 0.05]       # noise2
             ]
-    
         return params_list
