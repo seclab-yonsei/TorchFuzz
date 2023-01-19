@@ -62,12 +62,12 @@ use **.runfuzzing()** to start fuzzing.
 #### Base Parameters list
 ```python
 params_list = [
-[-3, -2, -1, 1, 2, 3],      # translation
-[7, 8, 10, 11, 12,],         # scale
+[-3, -2, -1, 1, 2, 3],          # translation
+[7, 8, 10, 11, 12,],            # scale
 [-6, -5, -3, 3, 5, 6],          # shear
-[5, 7, 9, 11, 13],                 # contrast
+[5, 7, 9, 11, 13],              # contrast
 [-50, -40, -30, 30, 40, 50],    # rotation
-[-20, -10, 10, 20],    # brightness
+[-20, -10, 10, 20],             # brightness
 [1, 2, 3, 5, 7, 9],             # blur
 [1, 3, 5, 7, 9, 11],            # GaussianBlur
 [1, 3, 5],                      # MedianBlur
