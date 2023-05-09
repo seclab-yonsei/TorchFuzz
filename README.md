@@ -74,7 +74,7 @@ params_list = [
 [6, 9]                          # bilateraFilter
 ]
 ```
-#### Output
+#### Output 
 All datas are stored in **./cache** folder.
 
 - **nc_arr.npy**: Coverage of train data  
